@@ -7,28 +7,31 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="navegarALugar('Primer lugar')">Navegar a Primer Lugar</button>
-  <button ion-button (click)="navegarALugar('Segundo lugar')">Navegar a Segundo Lugar</button>
-  <!--<p text-center>Texto Normal</p>
-<p text-right>Texto Derecha</p>
-<p text-left>Texto Izquierda</p>
-<p text-uppercase text-center>Texto en Mayusculas</p>
-<p text-lowercase text-center>Texto en minusculas</p>
-<p text-capitalize text-center>Texto capitalizado</p>
-  <p text-wrap>
-    Lorem ipasum dolor sit amet, consectetur adipisicing elit. Animi distinctio eos facere iusto laboriosam laborum nulla quisquam repudiandae saepe. Aperiam at cumque eos esse eveniet exercitationem qui ratione, voluptas voluptatum?
-  </p>
-  <p text-nowrap>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis dolorum, eligendi ex fugiat fugit illum ipsam iste nemo neque nobis obcaecati officiis, perspiciatis porro quis recusandae, similique vel veniam.
-  </p>-->
 
-  <p padding>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequuntur dolorem facere facilis incidunt ipsa itaque natus neque nesciunt nobis odit quos recusandae rem rerum, temporibus ut voluptas voluptates!
-  </p>
 
-  <p padding-left>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid cupiditate debitis, dignissimos dolor dolore ex, incidunt iste magnam modi nihil quia veniam voluptate. Aliquam assumenda ex magni nam quam!
-  </p>
+  <ion-list>
+    <ion-item *ngFor="let lugar of lugares" (click)="irAVistaDeDetalleExistente()">
+      <!--<ion-avatar item-start>
+        <img src="img/avatar-finn.png">
+      </ion-avatar>-->
+      <h2>{{lugar.nombre}}</h2>
+      <h3>{{lugar.direccion}}</h3>
+      <p>{{lugar.categoria}}</p>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-fab right bottom padding>
+    <button ion-fab color="primary" (click)="irAVistaDeDetalle()"><ion-icon name="add"></ion-icon></button>
+    <!--<ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>-->
+  </ion-fab>
+
+
 
 </ion-content>
 

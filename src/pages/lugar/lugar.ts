@@ -17,23 +17,23 @@ import {HomePage} from "../home/home";
 })
 export class LugarPage {
 
-  nombreLugar:string = '';
+  lugar:any = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.nombreLugar = navParams.get('nombre');
+    this.lugar = navParams.get('lugar');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LugarPage');
   }
-
+/*
   navigateBack(){
     this.navCtrl.pop();
   }
 
   navigateToTercera(){
     this.navCtrl.push(TerceraPage)
-  }
+  }*/
 
 
 
