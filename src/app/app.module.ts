@@ -13,6 +13,7 @@ import {TerceraPage} from "../pages/tercera/tercera";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
+import {LugaresService} from "../services/lugares.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDYyfVxWxddSQrkH0AbpqNgujW7PkqouUE",
@@ -52,6 +53,7 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    LugaresService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

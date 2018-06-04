@@ -14,9 +14,35 @@
 
 
 <ion-content padding>
-{{nombreLugar}}
-  <!--<button ion-button (click)="navigateBack()">Regresar</button>
-  <button ion-button (click)="navigateToTercera()">Ir a Tercera</button>-->
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nombre del Lugar</ion-label>
+      <ion-input type="text" [(ngModel)]="lugar.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Direccion</ion-label>
+      <ion-input type="text" [(ngModel)]="lugar.direccion">Dirección</ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-select [(ngModel)]="lugar.categoria">
+        <ion-option value="aire_libre">Aire Libre</ion-option>
+        <ion-option value="lugar_cerrado">Lugar Cerrado</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-textarea [(ngModel)]="lugar.descripcion"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full (click)="guardarLugar()">Guardar Lugar</button>
 
 
 </ion-content>
