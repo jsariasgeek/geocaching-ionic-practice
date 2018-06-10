@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mi Calendario
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let lugar of lugares">
+        <ion-item (click)="irAVistaDeDetalleExistente(lugar)">
+          <!--<ion-avatar item-start>
+            <img src="img/avatar-finn.png">
+          </ion-avatar>-->
+          <h2>{{lugar.nombre}}</h2>
+          <h3>{{lugar.direccion }}</h3>
+          <p>{{lugar.categoria }}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteLugar(lugar)">
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-card *ngIf="sinLugares">
+    <ion-card-header>
+      Sin Resultados
+    </ion-card-header>
+    <ion-card-content>
+      No hay lugares para mostrar
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom padding>
+    <button ion-fab color="primary" (click)="irAVistaDeDetalle()"><ion-icon name="add"></ion-icon></button>
+    <!--<ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>-->
+  </ion-fab>
+
+
+
+</ion-content>
+

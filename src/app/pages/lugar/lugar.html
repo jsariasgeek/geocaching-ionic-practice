@@ -16,20 +16,22 @@
 <ion-content padding>
   <ion-list>
 
+    <form [formGroup]="lugarForm">
+
     <ion-item>
       <ion-label floating>Nombre del Lugar</ion-label>
-      <ion-input type="text" [(ngModel)]="lugar.nombre"></ion-input>
+      <ion-input type="text" [(ngModel)]="lugar.nombre" formControlName="nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Direccion</ion-label>
-      <ion-input type="text" [(ngModel)]="lugar.direccion">Dirección</ion-input>
+      <ion-input type="text" [(ngModel)]="lugar.direccion" formControlName="direccion">Dirección</ion-input>
     </ion-item>
 
 
     <ion-item>
       <ion-label floating>Categoria</ion-label>
-      <ion-select [(ngModel)]="lugar.categoria">
+      <ion-select [(ngModel)]="lugar.categoria" formControlName="categoria">
         <ion-option value="aire_libre">Aire Libre</ion-option>
         <ion-option value="lugar_cerrado">Lugar Cerrado</ion-option>
       </ion-select>
@@ -37,12 +39,20 @@
 
     <ion-item>
       <ion-label floating>Descripción</ion-label>
-      <ion-textarea [(ngModel)]="lugar.descripcion"></ion-textarea>
+      <ion-textarea [(ngModel)]="lugar.descripcion" formControlName="descripcion" required></ion-textarea>
     </ion-item>
+
+    </form>
+
+    <!--<ion-item>
+      <button ion-button (click)="uploadPicture()">Subir Imagen</button>
+
+    </ion-item>-->
 
   </ion-list>
 
-  <button ion-button full (click)="guardarLugar()">Guardar Lugar</button>
+  <button ion-button full (click)="guardarLugar()" [disabled]="!this.lugarForm.valid">Guardar Lugar</button>
+  <button ion-button full (click)="eliminarLugar()" color="danger">Eliminar Lugar</button>
 
 
 </ion-content>

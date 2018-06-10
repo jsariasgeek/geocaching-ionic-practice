@@ -5,15 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import {LugarPage} from "../pages/lugar/lugar";
-import {PerfilPage} from "../pages/perfil/perfil";
-import {TabsPage} from "../pages/tabs/tabs";
-import {TerceraPage} from "../pages/tercera/tercera";
+import { HomePage } from './pages/home/home';
+import {LugarPage} from "./pages/lugar/lugar";
+import {PerfilPage} from "./pages/perfil/perfil";
+import {TabsPage} from "./pages/tabs/tabs";
+import {TerceraPage} from "./pages/tercera/tercera";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFireDatabaseModule, AngularFireDatabase} from "angularfire2/database";
-import {LugaresService} from "../services/lugares.service";
+import {LugaresService} from "./services/lugares.service";
+import {LoginPage} from "./pages/login/login";
+import {AuthService} from "./services/auth.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDYyfVxWxddSQrkH0AbpqNgujW7PkqouUE",
@@ -31,6 +33,7 @@ export const firebaseConfig = {
     LugarPage,
     PerfilPage,
     TabsPage,
+    LoginPage,
     TerceraPage
   ],
   imports: [
@@ -47,13 +50,15 @@ export const firebaseConfig = {
     LugarPage,
     PerfilPage,
     TabsPage,
-    TerceraPage
+    TerceraPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
     LugaresService,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
